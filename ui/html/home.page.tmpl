@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from nimoy.ceosdesigns.sk/template/v05/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Oct 2022 14:16:12 GMT -->
+<head>
+	<!-- // Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Required meta tags // -->
+
+    <meta name="description" content="">
+	<meta name="author" content="ceosdesigns.sk">
+
+    <title>Plagarism Duck</title>
+
+	<!-- // Google Web Fonts -->
+	<!-- <link href="../../../fonts.googleapis.com/css57b7.css?family=Open+Sans:400,600&amp;display=swap" rel="stylesheet"> -->
+	<!-- Google Web Fonts // -->
+	
+	<!-- // Font Awesome 5 Free -->
+	<!-- <link href="../../../use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous" rel="stylesheet"> -->
+	<!-- Font Awesome 5 Free // -->
+
+    <!-- // Template CSS files -->
+	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/static/css/styles.css" rel="stylesheet">
+	<!-- Template CSS files  // -->
+</head>
+<body>
+	<!-- // Preloader -->
+	<div id="nm-preloader" class="nm-aic nm-vh-md-100">
+		<div class="nm-ripple">
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+
+	<style>
+		body {
+        background: #ececec;
+    }
+    /*Hidden class for adding and removing*/
+    .lds-dual-ring.hidden {
+        display: none;
+    }
+
+    /*Add an overlay to the entire page blocking any further presses to buttons or other elements.*/
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0,0,0,.8);
+        z-index: 999;
+        opacity: 1;
+        transition: all 0.5s;
+    }
+    
+    /*Spinner Styles*/
+    .lds-dual-ring {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+    }
+    .lds-dual-ring:after {
+        content: " ";
+        display: block;
+        width: 64px;
+        height: 64px;
+        margin: 5% auto;
+        border-radius: 50%;
+        border: 6px solid #fff;
+        border-color: #fff transparent #fff transparent;
+        animation: lds-dual-ring 1.2s linear infinite;
+    }
+    @keyframes lds-dual-ring {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+	</style>
+	<!-- Preloader // -->
+
+	<main class="d-flex">
+    <div class="container main-container">
+        <div class="row nm-aic">
+            <div class="col-md-6 col-lg-5 offset-lg-1 nm-mb-1 nm-mb-md-1">
+                <div class="card">
+                    <div class="card-content">
+                        <h2 class="nm-tc nm-mb-1">Check for Plagarism</h2>
+                        <form action="/check_paragraph/" method="POST" id="paragraph-form">
+                            <input type="hidden" name="csrfmiddlewaretoken" value="l0OpnNXxhXEIGU6NxxSWOZiKxNacVXgpKOrWwJ9rzaTtVPtgy9J2KttGvB74eLdZ">
+                            <div class="form-group">
+                                <label for="inputEmail">Enter Paragraph</label>
+                                <textarea name="paragraph" cols="40" rows="12" class="form-control" placeholder="Enter paragraph here" id="paragraph-text" required=""></textarea>
+                            </div>
+
+                            <button id="submit_btn" type="submit" class="btn btn-block btn-primary text-uppercase nm-btn">Submit</button>
+                            <div id="loader" class="lds-dual-ring hidden overlay"></div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-5 offset-lg-1">
+                <h2 class="large">Results appear here</h2>
+                <ul class="list-unstyled mb-11" id="results">
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+	
+	<!-- // Vendor JS files -->
+	<script src="/static/js/jquery-3.6.0.min.js"></script>
+	<script src="/static/js/bootstrap.bundle.min.js"></script>
+	<!-- Vendor JS files // -->
+
+	<!-- Template JS files // -->
+	<script src="/static/js/script.js"></script>
+	<script src="/static/js/ajax.js"></script>
+	<!-- Template JS files // -->
+
+</body>
+
+<!-- Mirrored from nimoy.ceosdesigns.sk/template/v05/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Oct 2022 14:16:29 GMT -->
+</html>
